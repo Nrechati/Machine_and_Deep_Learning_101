@@ -65,6 +65,7 @@ I relied on a lot of really helpful resources to achieve this.
 - **Coursera/Machine Learning course offered by Stanford University** : [Link here](https://www.coursera.org/learn/machine-learning). Real great "theory focused" machine and deep learning course
 - **Python Official Doc** : [Python.org](https://www.python.org/) Really clear documentation about python and packages
 - **SKlearn documentation** : [Website](https://scikit-learn.org/stable/). Cool ML/DL Framework with good documentation
+- **3Blue1Brown** : [YouTube Channel](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) Great playlist upon Neural Network Gradient Descent
 
 ## About Me
 
