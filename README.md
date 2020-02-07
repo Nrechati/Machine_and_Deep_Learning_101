@@ -66,6 +66,10 @@ I obviously relied on a lot of really helpfull ressources to achieve this.
 - **Python Official Doc** : [Python.org](https://www.python.org/) Really clear documentation about python and packages
 - **SKlearn documentation** : [Website](https://scikit-learn.org/stable/). Cool ML/DL Framework with good documentation
 
+## About Me
+
+My name is **Nicolas** and I'm a curious 25 y/o **french engineer**. I **graduated on 2017** as an aeronautics engineer from **ESTACA** with the *"Avionics and Flight commands"* speciality. As I though **software developement** was also a key behind engineering to **push technologies** in a lot of fields,I integrated **42** in Paris since now 1.5 year to get some **C/C++ and Python skills**.
+
 ## Update
 
 **Last Update** of this repository and README.md was made on 02/07/2020
