@@ -46,6 +46,19 @@ Then simply going to one of the model directories and run it. In general, every 
 
 ### Linear Regression
 
+- Model : Lorem Ipsum
+- Hypothesis and Prediction : Lorem Ipsum
+- Cost function and Fitting : Lorem Ipsum
+- Linear Gradient Descent : Lorem Ipsum
+
+- Single Feature
+![SingleVariable LGD](./Ressources/Screenshots/Single_LGD_run.png)
+![SingleVariable LGD Plot](./Ressources/Screenshots/Single_LGD_plot.png)
+- Multiple Feature
+![MultiVariable LGD](./Ressources/Screenshots/Multi_LGD_run.png)
+![MultiVariable LGD Plot](./Ressources/Screenshots/Multi_LGD_plot.png)
+- Regularization
+
 ### Logistic Regression (for Classification problems)
 
 ### Decision tree (for Labels classification)
