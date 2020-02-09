@@ -48,21 +48,26 @@ Then simply going to one of the model directories and run it. In general, every 
 
 - **Model:**
 For this linear regression, the goal is to use training data to train our model (cf. *Gradient Descent* part below), then predict ouput *Y* for new input *X* by using our trained *H* function (cf. *Hypothesis* part below)
+
 ![General Model](./Ressources/Screenshots/Model.png)
 
 -  **Hypothesis and Prediction :**
 
 As an accurate predictions from the model is our main goal, making good hyptothesis is crucial. The hypothesis refers to the *H* function in the model presented. Training the model will tweak values in it, that will define our hypothesis coefficient, but not the *"form"* of it. For a single feature linear regression, we can asssume our prediction will follow a line of equation :
+
 ![ax+b](./Ressources/Screenshots/math/ax+b.png)
 
 To suit our model we introduce the theta matrix. Theta is the matrix our model will change over iteration while training. And then use it's coefficients in the *H* function. We then have
+
 ![h_single](./Ressources/Screenshots/math/h_single.png)
 
 Going further , we will add a theta coefficient for each feature to end with
+
 ![h_multi](./Ressources/Screenshots/math/h_multi.png)
 
 Where X matrix is the value for each feature in one example of our Dataset.
 In the future we will use a vectorized form of ***H***
+
 ![h_vec](./Ressources/Screenshots/math/h_vec.png)
 
 >**Note:** Benchmarking and choosing the good hypothesis in a model is a huge part of it's performance. Using **polynomial factors** or more complex ones can greatly **improve accuracy**. I did read a lot toward those, and also the problem of **overfitting** and the ***"bias - variance"*** problem. But didn't implemented them is this project. As I feel like this his something related to a precise model on a precise dataset and **I wanted a more generic model**.
@@ -70,6 +75,7 @@ In the future we will use a vectorized form of ***H***
 -  **Cost function and Fitting :**
 
 After defining what is our hypothesis, we'll introduce the **Cost Function**. The idea behind it is to quantify the error of our model to be able to train it afterward. And to do that, our cost function will be the **Mean Squared Error** between prediction and real example from the dataset.
+
 ![cost](./Ressources/Screenshots/math/cost.png)
 
 Thus, **fitting** or *"training"* the model will result in trying the to modify theta to reach a minimum for the cost function of the model.
@@ -77,9 +83,11 @@ Thus, **fitting** or *"training"* the model will result in trying the to modify 
 -  **Linear Gradient Descent :**
 
 The more features, the higher the dimensions our our matrices grow. Thus using gradient to define *"wich way "* values of theta need to go to aim for the needed minimum of our cost function yield good results. Our ***fit*** function will then be defined by
+
 ![fit](./Ressources/Screenshots/math/fit.png)
 
 or the vectorized form :
+
 ![fit_vec](./Ressources/Screenshots/math/fit_vec.png)
 
 >**Note:** We see that alpha and Ncycle will have a big impact in the training process. But they also introduce the problem of under and overfitting. So even if they will be hardcoded values in the test files, playing with them and knowing their relations to the model is key.
