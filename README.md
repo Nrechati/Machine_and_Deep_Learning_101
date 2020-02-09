@@ -92,6 +92,10 @@ or the vectorized form :
 
 >**Note:** We see that alpha and Ncycle will have a big impact in the training process. But they also introduce the problem of under and overfitting. So even if they will be hardcoded values in the test files, playing with them and knowing their relations to the model is key.
 
+- **The Dataset**
+
+For this linear regression, I will be using a toy dataset with spacecraft prices as Y output and a 3 feature input X (Age of the spacecraft, Thrust power and Covered distance). The model will do three single feature fitting then fit over all features.
+
 - **Single Feature Results**
 
 ![SingleVariable LGD](./Ressources/Screenshots/Single_LGD_run.png)
@@ -102,15 +106,36 @@ or the vectorized form :
 ![MultiVariable LGD](./Ressources/Screenshots/Multi_LGD_run.png)
 ![MultiVariable LGD Plot](./Ressources/Screenshots/Multi_LGD_plot.png)
 
-- **Regularization**
+### Logistic Regression (for Classification problems)
+
+- **Logistic vs Linear Regression : Model and Desgin differences :**
+
+Lorem ipsum
+
+- **Logistic vs Linear Regression : Math and Implementation differences :**
 
 Lorem Ipsum
 
-### Logistic Regression (for Classification problems)
+
+> **Regularization** : For both linear and logistic regression
 
 ### Decision tree (for Labels classification)
 
+- **Decision tree definition**
+
+- **Gini impurity**
+
+- **Information Gain**
+
+- **Node vs Leaf**
+
+- **Fitting and Predicting**
+
+- **Results**
+
 ### Neural Network
+
+**Work in Progress** I will update this section when my multilayer perceptron model will work.
 
 ## What's Next?
 
