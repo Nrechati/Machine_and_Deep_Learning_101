@@ -67,7 +67,8 @@ Going further , we will add a theta coefficient for each feature to end with
 
 Where X matrix is the value for each feature in one example of our Dataset.
 In the future we will use a vectorized form of ***H***
-\t\t![h_vec](./Ressources/Screenshots/math/h_vec.gif)
+
+![h_vec](./Ressources/Screenshots/math/h_vec.gif)
 
 >**Note:** Benchmarking and choosing the good hypothesis in a model is a huge part of it's performance. Using **polynomial factors** or more complex ones can greatly **improve accuracy**. I did read a lot toward those, and also the problem of **overfitting** and the ***"bias - variance"*** problem. But didn't implemented them is this project. As I feel like this his something related to a precise model on a precise dataset and **I wanted a more generic model**.
 
