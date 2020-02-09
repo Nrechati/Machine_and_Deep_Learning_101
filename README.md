@@ -135,7 +135,7 @@ Lorem Ipsum
 
 ### Neural Network
 
-**Work in Progress** I will update this section when my multilayer perceptron model will work.
+**Work in Progress** I will update this section when my Multilayer Perceptron model will reach v1.0.
 
 ## What's Next?
 
