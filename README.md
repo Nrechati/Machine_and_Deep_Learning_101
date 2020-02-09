@@ -46,18 +46,50 @@ Then simply going to one of the model directories and run it. In general, every 
 
 ### Linear Regression
 
-- Model : Lorem Ipsum
-- Hypothesis and Prediction : Lorem Ipsum
-- Cost function and Fitting : Lorem Ipsum
-- Linear Gradient Descent : Lorem Ipsum
+- **Model:**
+For this linear regression, the goal is to use training data to train our model (cf. *Gradient Descent* part below), then predict ouput *Y* for new input *X* by using our trained *H* function (cf. *Hypothesis* part below)
+![General Model](./Ressources/Screenshots/Model.png)
 
-- Single Feature
+-  **Hypothesis and Prediction :**
+
+As an accurate predictions from the model is our main goal, making good hyptothesis is crucial. The hypothesis refers to the *H* function in the model presented. Training the model will tweak values in it, that will define our hypothesis coefficient, but not the *"form"* of it. For a single feature linear regression, we can asssume our prediction will follow a line of equation : $$ f(x) = Ax + B.$$
+To suit our model we introduce the theta matrix. Theta is the matrix our model will change over iteration while training. And then use it's coefficients in the *H* function. We then have
+$$\theta = \begin{bmatrix}\theta_0\\ \theta_1\end{bmatrix}  \&\  H(x)_\theta = \theta_1x + \theta_0$$
+Going further , we will add a theta coefficient for each feature to end with
+$$\theta = \begin{bmatrix}\theta_0\\ \theta_1\\ \vdots \\ \theta_n\end{bmatrix}  \&\  H(x)_\theta = \theta_0 + \theta_1x_1 + \cdots + \theta_n x_n$$
+Where X matrix is the value for each feature in one example of our Dataset.
+In the future we will use a vectorized form of ***H***
+$$H(X)_\theta =\theta^T X$$
+>**Note:** Benchmarking and choosing the good hypothesis in a model is a huge part of it's performance. Using **polynomial factors** or more complex ones can greatly **improve accuracy**. I did read a lot toward those, and also the problem of **overfitting** and the ***"bias - variance"*** problem. But didn't implemented them is this project. As I feel like this his something related to a precise model on a precise dataset and **I wanted a more generic model**.
+
+-  **Cost function and Fitting :**
+After defining what is our hypothesis, we'll introduce the **Cost Function**. The idea behind it is to quantify the error of our model to be able to train it afterward. And to do that, our cost function will be the **Mean Squared Error** between prediction and real example from the dataset.
+$$J(\theta) = \frac{1}{2m} \sum_{i=1}^n \Biggl(H_\theta(x^{(i)} - y^{(i)}\Biggr)^2$$
+Thus, **fitting** or *"training"* the model will result in trying the to modify theta to reach a minimum for the cost function of the model.
+
+-  **Linear Gradient Descent :**
+The more features, the higher the dimensions our our matrices grow. Thus using gradient to define *"wich way "* values of theta need to go to aim for the needed minimum of our cost function yield good results. Our ***fit*** function will then be defined by
+$$  for (N_{cycles} \quad\text{with}\quad\alpha_{train})  \\ \quad\\
+\theta_j  = \theta_j - \alpha \frac{\partial}{\partial\theta_j} J(\theta)\\
+\quad\\
+\Leftrightarrow\theta_j  = \theta_j - \frac{\alpha}{m} \sum_{i=1}^n \Biggl(H_\theta(x^{(i)} - y^{(i)}\Biggr)x_j\\  $$
+or the vectorized form :
+$$\theta = \theta - \frac{a}{m}X^T(X\theta - Y)$$
+>**Note:** We see that alpha and Ncycle will have a big impact in the training process. But they also introduce the problem of under and overfitting. So even if they will be hardcoded values in the test files, playing with them and knowing their relations to the model is key.
+
+- **Single Feature Results**
+
 ![SingleVariable LGD](./Ressources/Screenshots/Single_LGD_run.png)
 ![SingleVariable LGD Plot](./Ressources/Screenshots/Single_LGD_plot.png)
-- Multiple Feature
+
+- **Multiple Feature Results**
+
 ![MultiVariable LGD](./Ressources/Screenshots/Multi_LGD_run.png)
 ![MultiVariable LGD Plot](./Ressources/Screenshots/Multi_LGD_plot.png)
-- Regularization
+
+- **Regularization**
+
+Lorem Ipsum
 
 ### Logistic Regression (for Classification problems)
 
