@@ -1,4 +1,4 @@
-# Machine and Deep Learning: Basic ML and DL model from Scratch in Python3
+# Machine and Deep Learning: Basic ML and DL model from scratch in Python 3
 
 This project is my attempt to understanding and implementing some of the major Machine Learning and Deep Learning models and algorithms.
 
