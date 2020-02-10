@@ -142,7 +142,7 @@ With all that, we get the same model for gradient descent, but with the new cost
 ![Cost function](./Ressources/Screenshots/Regularized_LogReg.png)
 ![Cost function](./Ressources/Screenshots/Regularized_LogRegPlot.png)
 
-> **Regularization** : For both linear and logistic regression
+> **Regularization** : For both linear and logistic regression we can handle part of the overfitting problem by using regularization. I only implemented it on my Logistic Regression model, but can be done for linear regression in the same way. The goal is to reduce overfitting but keep all the features. As regularization works well when we have a lot of slightly useful features. It reduce the magnitude of thetas parameters in the computation. Overfitting introduce the problem of balance needed between bias and variance. We want our model to fit well the train data, but not a the cost at too much variance in the prediction due to high polynomial order or quadratic function.
 
 ### Decision tree (for Labels classification)
 
