@@ -134,13 +134,13 @@ With all that, we get the same model for gradient descent, but with the new cost
 
 -  **Result without regularization:**
 
-![Cost function](./Ressources/Screenshots/LogReg.png)
-![Cost function](./Ressources/Screenshots/LogRegPlot.png)
+![LogReg](./Ressources/Screenshots/LogReg.png)
+![LogRegPlot](./Ressources/Screenshots/LogRegPlot.png)
 
 -  **Result with regularization:**
 
-![Cost function](./Ressources/Screenshots/Regularized_LogReg.png)
-![Cost function](./Ressources/Screenshots/Regularized_LogRegPlot.png)
+![RegLogRed](./Ressources/Screenshots/Regularized_LogReg.png)
+![RegLogRegPlot](./Ressources/Screenshots/Regularized_LogRegPlot.png)
 
 > **Regularization** : For both linear and logistic regression we can handle part of the overfitting problem by using regularization. I only implemented it on my Logistic Regression model, but can be done for linear regression in the same way. The goal is to reduce overfitting but keep all the features. As regularization works well when we have a lot of slightly useful features. It reduce the magnitude of thetas parameters in the computation. Overfitting introduce the problem of balance needed between bias and variance. We want our model to fit well the train data, but not a the cost at too much variance in the prediction due to high polynomial order or quadratic function.
 
@@ -196,19 +196,21 @@ For this example i will use the iris dataset provided by Sckikit-learn. It is a 
 
 Printing the Tree (True branch from root)
 
-![info_gain](./Ressources/Screenshots/DecTreePrint.png)
+![DecTreePrint](./Ressources/Screenshots/DecTreePrint.png)
 
 Prediction on test set (True branch from root)
 
-![info_gain](./Ressources/Screenshots/DecTreeClassify.png)
+![DecTreePredict](./Ressources/Screenshots/DecTreeClassify.png)
 
 - **Decision tree regression**
 
 I might implement a Decision tree regression in the future. The goal is to use a decision tree to better fit the dataset than a linear regression by clustering input producing a *"staircase"* pattern. This is achieved by grouping together data with similar output, thus setting threshold for the tree questions, and assigning the mean output to data under a given threshold.
 
-![info_gain](./Ressources/Screenshots/DecTreeRegression.png)
+![DecTreeRegression](./Ressources/Screenshots/DecTreeRegression.png)
 
 ### Neural Network
+
+![MultilayerPerceptron](./Ressources/Screenshots/MultilayerPerceptron.png)
 
 **Work in Progress** I will update this section when my Multilayer Perceptron model will reach v1.0.
 
