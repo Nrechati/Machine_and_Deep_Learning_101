@@ -110,11 +110,27 @@ For this linear regression, I will be using a toy dataset with spacecraft prices
 
 - **Logistic vs Linear Regression : Model and Desgin differences :**
 
-Lorem ipsum
+The main difference between logistic and linear regression is in the use case we wan't to solve. Logistic regression will be used for what is called *"Classification"* problem. Here the output is a 1/0 value (True/False). The goal of the training process is to define a decision boundary, a hypothetical bound between clusters of "True" values and "False" ones. One example, widely used in documentation, is the determination of the benign/malignant status of a tumor regarding different *"features"*. The model is really close to linear regression but the hyptothesis and cost function will change to match the boolean nature of our output. The goal as seen in the image below, is to better fit the model than a linear regression for a True/False output
+
+![Model comparison](./Ressources/Screenshots/LogRegModel.png)
 
 - **Logistic vs Linear Regression : Math and Implementation differences :**
 
-Lorem Ipsum
+The first difference between those model, is the use of the **sigmoid** function. The function output is mostly real close to one or zero by nature, thus suiting our model quite well. The hypothesis used in the logistic regression model will then be the sigmoid of the linear regression hypothesis
+
+![Sigmoid](./Ressources/Screenshots/math/sigmoid.gif)
+
+Then we assume that our output is the probability for the model that a given example is 1 or 0. For example, a 0.7 output mean that the probability for the input to be 1 is 70%.
+
+The decision boundary is the line that separate the area where y=0 and where y=1. It is created by our hypothesis function. An example would be :
+
+![Decision](./Ressources/Screenshots/math/decision.gif)
+
+We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function. Instead, our cost function for logistic regression looks like:
+
+![Cost function](./Ressources/Screenshots/math/cost_log.gif)
+
+With all that, we get the same model for gradient descent, but with the new cost and hypothesis functions.
 
 > **Regularization** : For both linear and logistic regression
 
