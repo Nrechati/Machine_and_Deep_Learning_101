@@ -116,22 +116,58 @@ Lorem ipsum
 
 Lorem Ipsum
 
-
 > **Regularization** : For both linear and logistic regression
 
 ### Decision tree (for Labels classification)
 
 - **Decision tree definition**
 
+A decision tree classifier takes a dataset and build a tree by choosing what question to ask to split labels in the remaining dataset. The dataset will contain several examples with their corresponding labels and *value* for each choosen features. The goal of the model is to find boolean questions to split the dataset and ultimately end up with *leafs* containing only one type of label. Then while asking the same sequence of questions to a new entry, ending to a leaf and thus predict the label of the entry. The model will use several criterions and math equations to quantify label mixing and how a question is relevant at a given time to split dataset.
+
+![MultiVariable LGD Plot](./Ressources/Screenshots/DecTree.png)
+
+-  **Pros and Cons of Decision tree classifier**
+	- ***Pros***
+		-  This is a *"White Box"* model, where you can show, see, and easily understand how the trained model makes predictions
+		- Works with numerical and categorical features
+		- Requires little data processing
+		- No assumption needed about the shape of the data
+		- *Automatic* feature selection : the more important the feature, the more it will influence the model.
+	- ***Cons***
+		- More complexity on the model
+		- It tends to overfit, can be mitigated by limiting tree depth
+		- Takes time to build, but really fast at predicting
+
 - **Gini impurity**
+
+Gini impurity quantify the *"purity"* of a remaining child dataset, i.e. our the labels are mixed in it. The goal will be to reduce this along the tree and aim with leaf with 0 gini impurity (i.e. only one label in the leaf). It is defined by the ratio of occurence of a given label in the dataset.
+
+![gini](./Ressources/Screenshots/math/gini.gif)
+
+> **Note:** Shanon entropy is another criterion that can be used to quantify the information within a dataset. My model can used Shanon entropy or Gini impurity but used gini by default.
 
 - **Information Gain**
 
+Information Gain is the main metric used to build the tree. It quantify how much a given question split the dataset reducing overall gini impurity in the child branches. It is defined by the formula
+
+![info_gain](./Ressources/Screenshots/math/info_gain.gif)
+
 - **Node vs Leaf**
+
+After each new question and splitting the remaining data in branches (true or false), we can be in one of the folowing cases : Node or Leaf. If no possible question can further split our data down the tree, we have a leaf, wether gini impurity is 0 or not. Note that if we have a leaf where gini is not 0, the dataset contain data with different labels with same feature values (i.e. we need more or more accurate features), or the fit is not enough accurate. If a remaining possible question get an information gain greater than 0, then we can still split the dataset, and we have a new node.
 
 - **Fitting and Predicting**
 
+Regarding what I explained before, we end up building the tree by finding the best question, then spliiting the data the initiate recursion over it. You calculate the information gain of each possible question then take the best one to split the data. We then keep the node with a reference to the question, his true and false branch. If the best possible info gain is zero, the have a leaf. After that, we call the function again on the true and false branch until we reach on leafs or setted maximum depth.
+
 - **Results**
+
+Printing the Tree (True branch from root)
+![info_gain](./Ressources/Screenshots/DecTreePrint.gif)
+Prediction on test set (True branch from root)
+![info_gain](./Ressources/Screenshots/DecTreeClassify.gif)
+
+- **Decision tree regression**
 
 ### Neural Network
 
