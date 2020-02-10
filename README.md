@@ -160,6 +160,12 @@ After each new question and splitting the remaining data in branches (true or fa
 
 Regarding what I explained before, we end up building the tree by finding the best question, then spliiting the data the initiate recursion over it. You calculate the information gain of each possible question then take the best one to split the data. We then keep the node with a reference to the question, his true and false branch. If the best possible info gain is zero, the have a leaf. After that, we call the function again on the true and false branch until we reach on leafs or setted maximum depth.
 
+Prediction is then also done recursively. You start at the root node then ask the tree sequence of question, going from node to node regarding the answer to each question. If the answer is true, you folow the reference to the true branche, else the false branch.
+
+- **The Dataset**
+
+For this example i will use the iris dataset provided by Sckikit-learn. It is a 150 dataset of three iris type with four features : Sepal and Petal lenght and width. More on the official page [Scikit dataset info](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
+
 - **Results**
 
 Printing the Tree (True branch from root)
@@ -171,6 +177,10 @@ Prediction on test set (True branch from root)
 ![info_gain](./Ressources/Screenshots/DecTreeClassify.png)
 
 - **Decision tree regression**
+
+I might implement a Decision tree regression in the future. The goal is to use a decision tree to better fit the dataset than a linear regression by clustering input producing a *"staircase"* pattern. This is achieved by grouping together data with similar output, thus setting threshold for the tree questions, and assigning the mean output to data under a given threshold.
+
+![info_gain](./Ressources/Screenshots/DecTreeRegression.png)
 
 ### Neural Network
 
