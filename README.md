@@ -132,6 +132,14 @@ We cannot use the same cost function that we use for linear regression because t
 
 With all that, we get the same model for gradient descent, but with the new cost and hypothesis functions.
 
+-  **Result :**
+	- Without regularization
+	![Cost function](./Ressources/Screenshots/LogReg.png)
+	![Cost function](./Ressources/Screenshots/LogRegPlot.png)
+	- With regularization
+	![Cost function](./Ressources/Screenshots/Regularized_LogReg.png)
+	![Cost function](./Ressources/Screenshots/Regularized_LogRegPlot.png)
+
 > **Regularization** : For both linear and logistic regression
 
 ### Decision tree (for Labels classification)
