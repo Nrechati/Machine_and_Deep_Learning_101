@@ -44,9 +44,7 @@ Then simply going to one of the model directories and run it. In general, every 
 
 # Models and Features
 
-## Machine Learning
-
-### Linear Regression
+## *Machine Learning* : Linear Regression
 
 - **Model:**
 For this linear regression, the goal is to use training data to train our model (cf. *Gradient Descent* part below), then predict ouput *Y* for new input *X* by using our trained *H* function (cf. *Hypothesis* part below)
@@ -108,7 +106,7 @@ For this linear regression, I will be using a toy dataset with spacecraft prices
 ![MultiVariable LGD](./Ressources/Screenshots/Multi_LGD_run.png)
 ![MultiVariable LGD Plot](./Ressources/Screenshots/Multi_LGD_plot.png)
 
-### Logistic Regression (for Classification problems)
+## *Machine Learning* : Logistic Regression (for Classification problems)
 
 - **Logistic vs Linear Regression : Model and Desgin differences :**
 
@@ -146,7 +144,7 @@ With all that, we get the same model for gradient descent, but with the new cost
 
 > **Regularization** : For both linear and logistic regression we can handle part of the overfitting problem by using regularization. I only implemented it on my Logistic Regression model, but can be done for linear regression in the same way. The goal is to reduce overfitting but keep all the features. As regularization works well when we have a lot of slightly useful features. It reduce the magnitude of thetas parameters in the computation. Overfitting introduce the problem of balance needed between bias and variance. We want our model to fit well the train data, but not a the cost at too much variance in the prediction due to high polynomial order or quadratic function.
 
-### Decision tree (for Labels classification)
+## *Machine Learning* : Decision tree (for Labels classification)
 
 - **Decision tree definition**
 
@@ -210,9 +208,7 @@ I might implement a Decision tree regression in the future. The goal is to use a
 
 ![DecTreeRegression](./Ressources/Screenshots/DecTreeRegression.png)
 
-## Deep-Learning
-
-### Neural Network
+## *Deep Learning* : Neural Network
 
 **Work in Progress** I will update this section when my Multilayer Perceptron model will reach v1.0.
 
