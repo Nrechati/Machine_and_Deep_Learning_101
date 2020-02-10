@@ -210,9 +210,9 @@ I might implement a Decision tree regression in the future. The goal is to use a
 
 ### Neural Network
 
-![MultilayerPerceptron](./Ressources/Screenshots/MultilayerPerceptron.png)
-
 **Work in Progress** I will update this section when my Multilayer Perceptron model will reach v1.0.
+
+![MultilayerPerceptron](./Ressources/Screenshots/MultilayerPerceptron.png)
 
 ## What's Next?
 
