@@ -163,9 +163,12 @@ Regarding what I explained before, we end up building the tree by finding the be
 - **Results**
 
 Printing the Tree (True branch from root)
-![info_gain](./Ressources/Screenshots/DecTreePrint.gif)
+
+![info_gain](./Ressources/Screenshots/DecTreePrint.png)
+
 Prediction on test set (True branch from root)
-![info_gain](./Ressources/Screenshots/DecTreeClassify.gif)
+
+![info_gain](./Ressources/Screenshots/DecTreeClassify.png)
 
 - **Decision tree regression**
 
