@@ -42,7 +42,9 @@ Then simply going to one of the model directories and run it. In general, every 
 
 >**Note**: Program was built on **macOS Mojave** and I know there is some **workaround to do to run on Linux** as well (mostly for python3 installer)
 
-## Models and Features
+# Models and Features
+
+## Machine Learning
 
 ### Linear Regression
 
@@ -207,6 +209,8 @@ Prediction on test set (True branch from root)
 I might implement a Decision tree regression in the future. The goal is to use a decision tree to better fit the dataset than a linear regression by clustering input producing a *"staircase"* pattern. This is achieved by grouping together data with similar output, thus setting threshold for the tree questions, and assigning the mean output to data under a given threshold.
 
 ![DecTreeRegression](./Ressources/Screenshots/DecTreeRegression.png)
+
+## Deep-Learning
 
 ### Neural Network
 
