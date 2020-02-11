@@ -194,6 +194,8 @@ For this example, I will use the iris dataset provided by Sckikit-learn. It is a
 
 - **Results**
 
+![Model launch](./Ressources/Screenshots/dtc_run.png)
+
 Printing the Tree (True branch from the root)
 
 ![DecTreePrint](./Ressources/Screenshots/DecTreePrint.png)
