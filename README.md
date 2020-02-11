@@ -24,9 +24,9 @@ I included in the "Ressources" directory, a **shell script** that gets a **minic
 
 Few external packages are used in those models :
 - **pandas** : Mostly to get data from CSV files
-- **numpy**: Main package used to work with data and arrays
+- **numpy**: The main package used to work with data and arrays
 - **matplotlib**: Tool to display and plot data and results
-- **Colorama** : Just to make things fancy
+- **Colorama**: Just to make things fancy
 - **sklearn** : (Optional), Only used in test.py files to see differences between my models and sklearn ones.
 
 > Install using pip : `$> pip install numpy pandas matplotlib sklearn colorama`
@@ -47,42 +47,42 @@ Then simply going to one of the model directories and run it. In general, every 
 ## *Machine Learning* : Linear Regression
 
 - **Model:**
-For this linear regression, the goal is to use training data to train our model (cf. *Gradient Descent* part below), then predict ouput *Y* for new input *X* by using our trained *H* function (cf. *Hypothesis* part below)
+For this linear regression, the goal is to use training data to train our model (cf. *Gradient Descent* part below), then predict output *Y* for new input *X* by using our trained *H* function (cf. *Hypothesis* part below)
 
 ![General Model](./Ressources/Screenshots/Model.png)
 
--  **Hypothesis and Prediction :**
+-  **Hypothesis and Prediction:**
 
-As an accurate predictions from the model is our main goal, making good hyptothesis is crucial. The hypothesis refers to the *H* function in the model presented. Training the model will tweak values in it, that will define our hypothesis coefficient, but not the *"form"* of it. For a single feature linear regression, we can asssume our prediction will follow a line of equation :
+As an accurate prediction from the model is our main goal, making a good hypothesis is crucial. The hypothesis refers to the *H* function in the model presented. Training the model will tweak values in it, that will define our hypothesis coefficient, but not the *"form"* of it. For a single feature linear regression, we can assume our prediction will follow a line of the equation :
 
 ![ax+b](./Ressources/Screenshots/math/ax+b.gif)
 
-To suit our model we introduce the theta matrix. Theta is the matrix our model will change over iteration while training. And then use it's coefficients in the *H* function. We then have
+To suit our model we introduce the theta matrix. Theta is the matrix our model will change over iteration while training. And then use its coefficients in the *H* function. We then have
 
 ![h_single](./Ressources/Screenshots/math/h_single.gif)
 
-Going further , we will add a theta coefficient for each feature to end with
+Going further, we will add a theta coefficient for each feature to end with
 
 ![h_multi](./Ressources/Screenshots/math/h_multi.gif)
 
 Where X matrix is the value for each feature in one example of our Dataset.
-In the future we will use a vectorized form of ***H***
+In the future, we will use a vectorized form of ***H***
 
 ![h_vec](./Ressources/Screenshots/math/h_vec.gif)
 
->**Note:** Benchmarking and choosing the good hypothesis in a model is a huge part of it's performance. Using **polynomial factors** or more complex ones can greatly **improve accuracy**. I did read a lot toward those, and also the problem of **overfitting** and the ***"bias - variance"*** problem. But didn't implemented them is this project. As I feel like this his something related to a precise model on a precise dataset and **I wanted a more generic model**.
+>**Note:** Benchmarking and choosing the good hypothesis in a model is a huge part of its performance. Using **polynomial factors** or more complex ones can greatly **improve accuracy**. I did read a lot toward those, and also the problem of **overfitting** and the ***" bias-variance"*** problem. But didn't implemented them is this project. As I feel like this his something related to a precise model on a precise dataset and **I wanted a more generic model**.
 
--  **Cost function and Fitting :**
+-  **Cost function and Fitting:**
 
 After defining what is our hypothesis, we'll introduce the **Cost Function**. The idea behind it is to quantify the error of our model to be able to train it afterward. And to do that, our cost function will be the **Mean Squared Error** between prediction and real example from the dataset.
 
 ![cost](./Ressources/Screenshots/math/cost.gif)
 
-Thus, **fitting** or *"training"* the model will result in trying the to modify theta to reach a minimum for the cost function of the model.
+Thus, **fitting** or *"training"* the model will result in trying to modify theta to reach a minimum for the cost function of the model.
 
--  **Linear Gradient Descent :**
+-  **Linear Gradient Descent:**
 
-The more features, the higher the dimensions our our matrices grow. Thus using gradient to define *"wich way "* values of theta need to go to aim for the needed minimum of our cost function yield good results. Our ***fit*** function will then be defined by
+The more features, the higher the dimensions our matrices grow. Thus using a gradient to define *" which way "* values of theta need to go to aim for the needed minimum of our cost function yield good results. Our ***fit*** function will then be defined by
 
 ![fit](./Ressources/Screenshots/math/fit.gif)
 
@@ -90,11 +90,11 @@ or the vectorized form :
 
 ![fit_vec](./Ressources/Screenshots/math/fit_vec.gif)
 
->**Note:** We see that alpha and Ncycle will have a big impact in the training process. But they also introduce the problem of under and overfitting. So even if they will be hardcoded values in the test files, playing with them and knowing their relations to the model is key.
+>**Note:** We see that alpha and Ncycle will have a big impact on the training process. But they also introduce the problem of under and overfitting. So even if they will be hardcoded values in the test files, playing with them and knowing their relations to the model is key.
 
 - **The Dataset**
 
-For this linear regression, I will be using a toy dataset with spacecraft prices as Y output and a 3 feature input X (Age of the spacecraft, Thrust power and Covered distance). The model will do three single feature fitting then fit over all features.
+For this linear regression, I will be using a toy dataset with spacecraft prices as Y output and a 3 feature input X (Age of the spacecraft, Thrust power, and Covered distance). The model will do three single feature fitting then fit overall features.
 
 - **Single Feature Results**
 
@@ -108,21 +108,21 @@ For this linear regression, I will be using a toy dataset with spacecraft prices
 
 ## *Machine Learning* : Logistic Regression (for Classification problems)
 
-- **Logistic vs Linear Regression : Model and Desgin differences :**
+- **Logistic vs Linear Regression: Model and Design differences:**
 
-The main difference between logistic and linear regression is in the use case we wan't to solve. Logistic regression will be used for what is called *"Classification"* problem. Here the output is a 1/0 value (True/False). The goal of the training process is to define a decision boundary, a hypothetical bound between clusters of "True" values and "False" ones. One example, widely used in documentation, is the determination of the benign/malignant status of a tumor regarding different *"features"*. The model is really close to linear regression but the hyptothesis and cost function will change to match the boolean nature of our output. The goal as seen in the image below, is to better fit the model than a linear regression for a True/False output
+The main difference between logistic and linear regression is in the use case we want to solve. Logistic regression will be used for what is called *"Classification"* problem. Here the output is a 1/0 value (True/False). The goal of the training process is to define a decision boundary, a hypothetical bound between clusters of "True" values and "False" ones. One example, widely used in the documentation, is the determination of the benign/malignant status of a tumor regarding different *"features"*. The model is close to linear regression but the hypothesis and cost function will change to match the boolean nature of our output. The goal as seen in the image below is to better fit the model than a linear regression for a True/False output
 
 ![Model comparison](./Ressources/Screenshots/LogRegModel.png)
 
-- **Logistic vs Linear Regression : Math and Implementation differences :**
+- **Logistic vs Linear Regression: Math and Implementation differences:**
 
-The first difference between those model, is the use of the **sigmoid** function. The function output is mostly real close to one or zero by nature, thus suiting our model quite well. The hypothesis used in the logistic regression model will then be the sigmoid of the linear regression hypothesis
+The first difference between those models is the use of the **sigmoid** function. The function output is mostly real close to one or zero by nature, thus suiting our model quite well. The hypothesis used in the logistic regression model will then be the sigmoid of the linear regression hypothesis
 
 ![Sigmoid](./Ressources/Screenshots/math/sigmoid.gif)
 
-Then we assume that our output is the probability for the model that a given example is 1 or 0. For example, a 0.7 output mean that the probability for the input to be 1 is 70%.
+Then we assume that our output is the probability for the model that a given example is 1 or 0. For example, a 0.7 output means that the probability for the input to be 1 is 70%.
 
-The decision boundary is the line that separate the area where y=0 and where y=1. It is created by our hypothesis function. An example would be :
+The decision boundary is the line that separates the area where y=0 and where y=1. It is created by our hypothesis function. An example would be :
 
 ![Decision](./Ressources/Screenshots/math/decision.gif)
 
@@ -142,73 +142,73 @@ With all that, we get the same model for gradient descent, but with the new cost
 ![RegLogRed](./Ressources/Screenshots/Regularized_LogReg.png)
 ![RegLogRegPlot](./Ressources/Screenshots/Regularized_LogRegPlot.png)
 
-> **Regularization** : For both linear and logistic regression we can handle part of the overfitting problem by using regularization. I only implemented it on my Logistic Regression model, but can be done for linear regression in the same way. The goal is to reduce overfitting but keep all the features. As regularization works well when we have a lot of slightly useful features. It reduce the magnitude of thetas parameters in the computation. Overfitting introduce the problem of balance needed between bias and variance. We want our model to fit well the train data, but not a the cost at too much variance in the prediction due to high polynomial order or quadratic function.
+> **Regularization**: For both linear and logistic regression we can handle part of the overfitting problem by using regularization. I only implemented it on my Logistic Regression model but can be done for linear regression in the same way. The goal is to reduce overfitting but keep all the features. Regularization works well when we have a lot of slightly useful features. It reduces the magnitude of thetas parameters in the computation. Overfitting introduces the problem of balance needed between bias and variance. We want our model to fit well the train data, but not a the cost at too much variance in the prediction due to high polynomial order or quadratic function.
 
 ## *Machine Learning* : Decision tree (for Labels classification)
 
 - **Decision tree definition**
 
-A decision tree classifier takes a dataset and build a tree by choosing what question to ask to split labels in the remaining dataset. The dataset will contain several examples with their corresponding labels and *value* for each choosen features. The goal of the model is to find boolean questions to split the dataset and ultimately end up with *leafs* containing only one type of label. Then while asking the same sequence of questions to a new entry, ending to a leaf and thus predict the label of the entry. The model will use several criterions and math equations to quantify label mixing and how a question is relevant at a given time to split dataset.
+A decision tree classifier takes a dataset and builds a tree by choosing what question to ask to split labels in the remaining dataset. The dataset will contain several examples with their corresponding labels and *value* for each chosen features. The goal of the model is to find boolean questions to split the dataset and ultimately end up with * leaves* containing only one type of label. Then while asking the same sequence of questions to a new entry, ending to a leaf and thus predict the label of the entry. The model will use several criteria and math equations to quantify label mixing and how a question is relevant at a given time to split the dataset.
 
 ![MultiVariable LGD Plot](./Ressources/Screenshots/DecTree.png)
 
 -  **Pros and Cons of Decision tree classifier**
-	- ***Pros***
-		-  This is a *"White Box"* model, where you can show, see, and easily understand how the trained model makes predictions
-		- Works with numerical and categorical features
-		- Requires little data processing
-		- No assumption needed about the shape of the data
-		- *Automatic* feature selection : the more important the feature, the more it will influence the model.
-	- ***Cons***
-		- More complexity on the model
-		- It tends to overfit, can be mitigated by limiting tree depth
-		- Takes time to build, but really fast at predicting
+    - ***Pros***
+        -  This is a *"White Box"* model, where you can show, see, and easily understand how the trained model makes predictions
+        - Works with numerical and categorical features
+        - Requires little data processing
+        - No assumption needed about the shape of the data
+        - *Automatic* feature selection: the more important the feature, the more it will influence the model.
+    - ***Cons***
+        - More complexity on the model
+        - It tends to overfit, can be mitigated by limiting tree depth
+        - Takes time to build, but fast at predicting
 
 - **Gini impurity**
 
-Gini impurity quantify the *"purity"* of a remaining child dataset, i.e. our the labels are mixed in it. The goal will be to reduce this along the tree and aim with leaf with 0 gini impurity (i.e. only one label in the leaf). It is defined by the ratio of occurence of a given label in the dataset.
+Gini impurity quantifies the *"purity"* of a remaining child dataset, i.e. our the labels are mixed in it. The goal will be to reduce this along the tree and aim with leaf with 0 Gini impurity (i.e. only one label in the leaf). It is defined by the ratio of occurrence of a given label in the dataset.
 
 ![gini](./Ressources/Screenshots/math/gini.gif)
 
-> **Note:** Shanon entropy is another criterion that can be used to quantify the information within a dataset. My model can used Shanon entropy or Gini impurity but used gini by default.
+> **Note:** Shanon entropy is another criterion that can be used to quantify the information within a dataset. My model can use Shanon entropy or Gini impurity but used Gini by default.
 
 - **Information Gain**
 
-Information Gain is the main metric used to build the tree. It quantify how much a given question split the dataset reducing overall gini impurity in the child branches. It is defined by the formula
+Information Gain is the main metric used to build the tree. It quantifies how much a given question split the dataset reducing overall Gini impurity in the child branches. It is defined by the formula
 
 ![info_gain](./Ressources/Screenshots/math/info_gain.gif)
 
 - **Node vs Leaf**
 
-After each new question and splitting the remaining data in branches (true or false), we can be in one of the folowing cases : Node or Leaf. If no possible question can further split our data down the tree, we have a leaf, wether gini impurity is 0 or not. Note that if we have a leaf where gini is not 0, the dataset contain data with different labels with same feature values (i.e. we need more or more accurate features), or the fit is not enough accurate. If a remaining possible question get an information gain greater than 0, then we can still split the dataset, and we have a new node.
+After each new question and splitting the remaining data into branches (true or false), we can be in one of the following cases: Node or Leaf. If no possible question can further split our data down the tree, we have a leaf, whether Gini impurity is 0 or not. Note that if we have a leaf where Gini is not 0, the dataset contains data with different labels with the same feature values (i.e. we need more or more accurate features), or the fit is not enough accurate. If a remaining possible question gets an information gain greater than 0, then we can still split the dataset, and we have a new node.
 
 - **Fitting and Predicting**
 
-Regarding what I explained before, we end up building the tree by finding the best question, then spliiting the data the initiate recursion over it. You calculate the information gain of each possible question then take the best one to split the data. We then keep the node with a reference to the question, his true and false branch. If the best possible info gain is zero, the have a leaf. After that, we call the function again on the true and false branch until we reach on leafs or setted maximum depth.
+Regarding what I explained before, we end up building the tree by finding the best question, then splitting the data into the initial recursion over it. You calculate the information gain of each possible question then take the best one to split the data. We then keep the node with a reference to the question, his true and false branch. If the best possible info gain is zero, this is a leaf. After that, we call the function again on the true and false branch until we reach on leaves or set maximum depth.
 
-Prediction is then also done recursively. You start at the root node then ask the tree sequence of question, going from node to node regarding the answer to each question. If the answer is true, you folow the reference to the true branche, else the false branch.
+Prediction is then also done recursively. You start at the root node then ask the tree sequence of questions, going from node to node regarding the answer to each question. If the answer is true, you follow the reference to the true branch, else the false branch.
 
 - **The Dataset**
 
-For this example i will use the iris dataset provided by Sckikit-learn. It is a 150 dataset of three iris type with four features : Sepal and Petal lenght and width. More on the official page [Scikit dataset info](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
+For this example, I will use the iris dataset provided by Sckikit-learn. It is a 150 dataset of three iris type with four features: Sepal and Petal length and width. More on the official page [Scikit dataset info](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
 - **Results**
 
-Printing the Tree (True branch from root)
+Printing the Tree (True branch from the root)
 
 ![DecTreePrint](./Ressources/Screenshots/DecTreePrint.png)
 
-Prediction on test set (True branch from root)
+Prediction on the test set (True branch from the root)
 
 ![DecTreePredict](./Ressources/Screenshots/DecTreeClassify.png)
 
 - **Decision tree regression**
 
-I might implement a Decision tree regression in the future. The goal is to use a decision tree to better fit the dataset than a linear regression by clustering input producing a *"staircase"* pattern. This is achieved by grouping together data with similar output, thus setting threshold for the tree questions, and assigning the mean output to data under a given threshold.
+I might implement a Decision tree regression in the future. The goal is to use a decision tree to better fit the dataset than a linear regression by clustering input producing a *"staircase"* pattern. This is achieved by grouping data with similar output, thus setting thresholds for the three questions, and assigning the mean output to data under a given threshold.
 
 ![DecTreeRegression](./Ressources/Screenshots/DecTreeRegression.png)
 
-## *Deep Learning* : Neural Network
+## *Deep Learning*: Neural Network
 
 **Work in Progress** I will update this section when my Multilayer Perceptron model will reach v1.0.
 
