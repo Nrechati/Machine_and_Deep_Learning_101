@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/07 10:03:28 by nrechati          #+#    #+#              #
-#    Updated: 2020/02/11 14:41:22 by nrechati         ###   ########.fr        #
+#    Updated: 2020/02/11 15:09:49 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ def ft_progress(count, bar_char="█", size=int(100)):
 		pad_iter = " " * (len(str(total)) - len(str(x)))
 		time_delta = time.time() - start
 		progress_left = "[" + pad_percent + str(percent) + "%][ " + bar
-		progress_right = pad + " ] " + pad_iter + str(x - 1) + "/" + str(total - 1)
+		progress_right = pad + " ] " + pad_iter + str(x) + "/" + str(total)
 		elapsed_time = " | elapsed time " + "{:.2f}".format(time_delta) + "s     "
 		colored('green')
 		print (progress_left, end="")
