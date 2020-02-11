@@ -6,7 +6,7 @@
 #    By: nrechati <nrechati@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/11 14:19:35 by nrechati          #+#    #+#              #
-#    Updated: 2020/02/11 14:29:30 by nrechati         ###   ########.fr        #
+#    Updated: 2020/02/11 14:37:20 by nrechati         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ class LogisticRegression:
 	def	score(self, x, y):
 		return ((self.predict(x) == y).mean())
 
-	def plot_loss(self, xlabel='X values', ylabel='Y values', title='Losses / epoch', legendloc='upper left'):
+	def plot_loss(self, xlabel='X values', ylabel='Y values', title='Losses / epoch (Regularized)', legendloc='upper left'):
 		plt.plot(range(self.losses.shape[0]), self.losses)
 		plt.xlabel(xlabel)
 		plt.ylabel(ylabel)
