@@ -237,4 +237,4 @@ My name is **Nicolas** and I'm a curious 25 y/o **french engineer**. I **graduat
 
 ## Update
 
-**Last Update** of this repository and README.md was made on 02/07/2020
+**Last Update** of this repository and README.md was made on 02/11/2020
